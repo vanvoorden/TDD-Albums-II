@@ -31,6 +31,10 @@
 		1D0AACFD273880870065C4B8 /* NetworkImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACFC273880870065C4B8 /* NetworkImageOperation.swift */; };
 		1D0AACFE273880870065C4B8 /* NetworkImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACFC273880870065C4B8 /* NetworkImageOperation.swift */; };
 		1D0AAD00273880940065C4B8 /* NetworkImageOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACFF273880940065C4B8 /* NetworkImageOperationTests.swift */; };
+		1D0AAD02273881620065C4B8 /* AlbumsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AAD01273881620065C4B8 /* AlbumsListModel.swift */; };
+		1D0AAD03273881620065C4B8 /* AlbumsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AAD01273881620065C4B8 /* AlbumsListModel.swift */; };
+		1D0AAD052738816F0065C4B8 /* AlbumsListModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AAD042738816E0065C4B8 /* AlbumsListModelTests.swift */; };
+		1D0AAD072738818E0065C4B8 /* Albums.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D0AAD062738818D0065C4B8 /* Albums.json */; };
 		AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E3A27068BE40032C442 /* AlbumsApp.swift */; };
 		AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E4B27068BE70032C442 /* AlbumsTests.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +70,9 @@
 		1D0AACFA27387F060065C4B8 /* NetworkJSONOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONOperationTests.swift; sourceTree = "<group>"; };
 		1D0AACFC273880870065C4B8 /* NetworkImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageOperation.swift; sourceTree = "<group>"; };
 		1D0AACFF273880940065C4B8 /* NetworkImageOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageOperationTests.swift; sourceTree = "<group>"; };
+		1D0AAD01273881620065C4B8 /* AlbumsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsListModel.swift; sourceTree = "<group>"; };
+		1D0AAD042738816E0065C4B8 /* AlbumsListModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsListModelTests.swift; sourceTree = "<group>"; };
+		1D0AAD062738818D0065C4B8 /* Albums.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Albums.json; sourceTree = "<group>"; };
 		AE657E3727068BE40032C442 /* Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE657E3A27068BE40032C442 /* AlbumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsApp.swift; sourceTree = "<group>"; };
 		AE657E4727068BE70032C442 /* AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +122,7 @@
 			children = (
 				1D0AACE027386F2B0065C4B8 /* Albums-Bridging-Header.h */,
 				AE657E3A27068BE40032C442 /* AlbumsApp.swift */,
+				1D0AAD01273881620065C4B8 /* AlbumsListModel.swift */,
 				1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */,
 				1D0AACED273870480065C4B8 /* NetworkImageHandler.swift */,
 				1D0AACFC273880870065C4B8 /* NetworkImageOperation.swift */,
@@ -131,6 +139,8 @@
 		AE657E4A27068BE70032C442 /* AlbumsTests */ = {
 			isa = PBXGroup;
 			children = (
+				1D0AAD062738818D0065C4B8 /* Albums.json */,
+				1D0AAD042738816E0065C4B8 /* AlbumsListModelTests.swift */,
 				AE657E4B27068BE70032C442 /* AlbumsTests.swift */,
 				1D0AACD827386E470065C4B8 /* NetworkDataHandlerTests.swift */,
 				1D0AACF0273870570065C4B8 /* NetworkImageHandlerTests.swift */,
@@ -234,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0AAD072738818E0065C4B8 /* Albums.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +258,7 @@
 				1D0AACF327387EA10065C4B8 /* NetworkSession.swift in Sources */,
 				AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */,
 				1D0AACFD273880870065C4B8 /* NetworkImageOperation.swift in Sources */,
+				1D0AAD02273881620065C4B8 /* AlbumsListModel.swift in Sources */,
 				1D0AACF827387EFA0065C4B8 /* NetworkJSONOperation.swift in Sources */,
 				1D0AACEE273870480065C4B8 /* NetworkImageHandler.swift in Sources */,
 				1D0AACE427386F2B0065C4B8 /* NetworkImageSource.m in Sources */,
@@ -263,8 +275,10 @@
 				1D0AACDA27386E470065C4B8 /* NetworkDataHandlerTests.swift in Sources */,
 				1D0AACDD27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */,
 				1D0AACF1273870570065C4B8 /* NetworkImageHandlerTests.swift in Sources */,
+				1D0AAD03273881620065C4B8 /* AlbumsListModel.swift in Sources */,
 				AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */,
 				1D0AACFE273880870065C4B8 /* NetworkImageOperation.swift in Sources */,
+				1D0AAD052738816F0065C4B8 /* AlbumsListModelTests.swift in Sources */,
 				1D0AAD00273880940065C4B8 /* NetworkImageOperationTests.swift in Sources */,
 				1D0AACEF273870480065C4B8 /* NetworkImageHandler.swift in Sources */,
 				1D0AACE527386F2B0065C4B8 /* NetworkImageSource.m in Sources */,
