@@ -1,6 +1,6 @@
 //
-//  AlbumsTests.swift
-//  AlbumsTests
+//  NetworkDataHandler.swift
+//  Albums
 //
 //  Copyright © 2021 North Bronson Software
 //
@@ -13,42 +13,40 @@
 
 import Foundation
 
-func DataTestDouble() -> Data {
-  return Data(UInt8.min...UInt8.max)
+struct NetworkDataHandler {
+  
 }
 
-func HTTPURLResponseTestDouble(
-  statusCode: Int = 200,
-  headerFields: Dictionary<String, String>? = nil
-) -> HTTPURLResponse {
-  return HTTPURLResponse(
-    url: URLTestDouble(),
-    statusCode: statusCode,
-    httpVersion: "HTTP/1.1",
-    headerFields: headerFields
-  )!
+extension NetworkDataHandler {
+  static func data(
+    with data: Data,
+    response: URLResponse
+  ) throws -> Data {
+    guard
+      let statusCode = (response as? HTTPURLResponse)?.statusCode,
+      200...299 ~= statusCode
+    else {
+      throw Self.Error(.statusCodeError)
+    }
+    return data
+  }
 }
 
-func NSErrorTestDouble() -> NSError {
-  return NSError(
-    domain: "",
-    code: 0
-  )
-}
-
-func URLRequestTestDouble() -> URLRequest {
-  return URLRequest(url: URLTestDouble())
-}
-
-func URLResponseTestDouble() -> URLResponse {
-  return URLResponse(
-    url: URLTestDouble(),
-    mimeType: nil,
-    expectedContentLength: 0,
-    textEncodingName: nil
-  )
-}
-
-func URLTestDouble() -> URL {
-  return URL(string: "http://localhost/")!
+extension NetworkDataHandler {
+  struct Error : Swift.Error {
+    enum Code {
+      case statusCodeError
+    }
+    
+    let code: Self.Code
+    let underlying: Swift.Error?
+    
+    init(
+      _ code: Self.Code,
+      underlying: Swift.Error? = nil
+    ) {
+      self.code = code
+      self.underlying = underlying
+    }
+  }
 }
