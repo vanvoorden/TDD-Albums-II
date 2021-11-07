@@ -1,0 +1,161 @@
+//
+//  AlbumsListRowView.swift
+//  Albums
+//
+//  Copyright © 2021 North Bronson Software
+//
+//  This Item is protected by copyright and/or related rights. You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use. In addition, no permission is required from the rights-holder(s) for scholarly, educational, or non-commercial uses. For other uses, you need to obtain permission from the rights-holder(s).
+//
+//  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+
+import SwiftUI
+
+@MainActor protocol AlbumsListRowViewModel : ObservableObject {
+  var artist: String { get }
+  var name: String { get }
+  var image: CGImage? { get }
+  
+  init(album: Album)
+  
+  func requestImage() async throws
+}
+
+extension AlbumsListRowModel : AlbumsListRowViewModel where ImageOperation == NetworkImageOperation<NetworkSession<URLSession>, NetworkImageHandler<NetworkDataHandler, NetworkImageSerialization<NetworkImageSource>>> {
+  
+}
+
+struct AlbumsListRowView<ListRowViewModel : AlbumsListRowViewModel> : View {
+  @ObservedObject private var model: ListRowViewModel
+  
+  init(model: ListRowViewModel) {
+    self.model = model
+  }
+}
+
+extension AlbumsListRowView {
+  var body: some View {
+    HStack {
+      if let cgImage = self.model.image {
+        Image(
+          decorative: cgImage,
+          scale: 1.0,
+          orientation: .up
+        ).resizable(
+        ).aspectRatio(
+          contentMode: .fit
+        ).frame(
+          width: 128,
+          height: 128,
+          alignment: .topLeading
+        )
+      }
+      VStack(
+        alignment: .leading,
+        spacing: 3
+      ) {
+        Text(
+          self.model.artist
+        ).foregroundColor(
+          .primary
+        ).font(
+          .headline
+        )
+        Text(
+          self.model.name
+        ).foregroundColor(
+          .secondary
+        ).font(
+          .subheadline
+        )
+      }
+    }.task {
+      do {
+        try await self.model.requestImage()
+      } catch {
+        print(error)
+      }
+    }
+  }
+}
+
+struct AlbumsListRowView_Previews: PreviewProvider {
+  
+}
+
+extension AlbumsListRowView_Previews {
+  private final class ListRowModel : AlbumsListRowViewModel {
+    let artist: String
+    let name: String
+    
+    @Published private(set) var image: CGImage?
+    
+    init(album: Album) {
+      self.artist = album.artist
+      self.name = album.name
+    }
+    
+    func requestImage() async throws {
+      if let context = CGContext(
+        data: nil,
+        width: 256,
+        height: 256,
+        bitsPerComponent: 8,
+        bytesPerRow: 0,
+        space: CGColorSpaceCreateDeviceRGB(),
+        bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+      ) {
+        context.setFillColor(
+          red: 0.5,
+          green: 0.5,
+          blue: 0.5,
+          alpha: 1
+        )
+        context.fill(
+          CGRect(
+            x: 0,
+            y: 0,
+            width: 256,
+            height: 256
+          )
+        )
+        self.image = context.makeImage()
+      }
+    }
+  }
+}
+
+extension AlbumsListRowView_Previews {
+  static var albums: Array<Album> {
+    return [
+      Album(
+        id: "Rubber Soul",
+        artist: "Beatles",
+        name: "Rubber Soul",
+        image: "http://localhost/rubber-soul.jpeg"
+      ),
+      Album(
+        id: "Pet Sounds",
+        artist: "Beach Boys",
+        name: "Pet Sounds",
+        image: "http://localhost/pet-sounds.jpeg"
+      ),
+    ]
+  }
+}
+
+extension AlbumsListRowView_Previews {
+  static var previews: some View {
+    List(
+      self.albums
+    ) { album in
+      AlbumsListRowView<ListRowModel>(
+        model: ListRowModel(album: album)
+      )
+    }.listStyle(
+      .plain
+    )
+  }
+}
