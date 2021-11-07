@@ -13,12 +13,29 @@
 
 import SwiftUI
 
-@main
-struct AlbumsApp: App {
+@main struct AlbumsApp: App {
+  @StateObject private var model = ListModel()
+}
+
+extension AlbumsApp {
+  private typealias JSONHandler = NetworkJSONHandler<NetworkDataHandler, JSONSerialization>
+  private typealias ImageHandler = NetworkImageHandler<NetworkDataHandler, NetworkImageSerialization<NetworkImageSource>>
+
+  private typealias JSONOperation = NetworkJSONOperation<NetworkSession<URLSession>, JSONHandler>
+  private typealias ImageOperation = NetworkImageOperation<NetworkSession<URLSession>, ImageHandler>
+
+  private typealias ListModel = AlbumsListModel<JSONOperation>
+  private typealias ListRowModel = AlbumsListRowModel<ImageOperation>
+
+  private typealias ListView = AlbumsListView<ListModel, ListRowModel>
+}
+
+extension AlbumsApp {
   var body: some Scene {
     WindowGroup {
-      Text("Hello, world!")
-        .padding()
+      ListView(
+        model: self.model
+      )
     }
   }
 }
