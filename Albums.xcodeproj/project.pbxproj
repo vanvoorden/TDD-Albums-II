@@ -10,6 +10,9 @@
 		1D0AACD627386E3D0065C4B8 /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */; };
 		1D0AACD727386E3D0065C4B8 /* NetworkDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */; };
 		1D0AACDA27386E470065C4B8 /* NetworkDataHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACD827386E470065C4B8 /* NetworkDataHandlerTests.swift */; };
+		1D0AACDC27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACDB27386EC90065C4B8 /* NetworkJSONHandler.swift */; };
+		1D0AACDD27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACDB27386EC90065C4B8 /* NetworkJSONHandler.swift */; };
+		1D0AACDF27386ED70065C4B8 /* NetworkJSONHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACDE27386ED70065C4B8 /* NetworkJSONHandlerTests.swift */; };
 		AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E3A27068BE40032C442 /* AlbumsApp.swift */; };
 		AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E4B27068BE70032C442 /* AlbumsTests.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +32,8 @@
 		1D0AACD427386DA20065C4B8 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataHandler.swift; sourceTree = "<group>"; };
 		1D0AACD827386E470065C4B8 /* NetworkDataHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDataHandlerTests.swift; sourceTree = "<group>"; };
+		1D0AACDB27386EC90065C4B8 /* NetworkJSONHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONHandler.swift; sourceTree = "<group>"; };
+		1D0AACDE27386ED70065C4B8 /* NetworkJSONHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkJSONHandlerTests.swift; sourceTree = "<group>"; };
 		AE657E3727068BE40032C442 /* Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE657E3A27068BE40032C442 /* AlbumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsApp.swift; sourceTree = "<group>"; };
 		AE657E4727068BE70032C442 /* AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +83,7 @@
 			children = (
 				AE657E3A27068BE40032C442 /* AlbumsApp.swift */,
 				1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */,
+				1D0AACDB27386EC90065C4B8 /* NetworkJSONHandler.swift */,
 			);
 			path = Albums;
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 			children = (
 				AE657E4B27068BE70032C442 /* AlbumsTests.swift */,
 				1D0AACD827386E470065C4B8 /* NetworkDataHandlerTests.swift */,
+				1D0AACDE27386ED70065C4B8 /* NetworkJSONHandlerTests.swift */,
 			);
 			path = AlbumsTests;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 			files = (
 				AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */,
 				1D0AACD627386E3D0065C4B8 /* NetworkDataHandler.swift in Sources */,
+				1D0AACDC27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D0AACDA27386E470065C4B8 /* NetworkDataHandlerTests.swift in Sources */,
+				1D0AACDD27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */,
 				AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */,
+				1D0AACDF27386ED70065C4B8 /* NetworkJSONHandlerTests.swift in Sources */,
 				1D0AACD727386E3D0065C4B8 /* NetworkDataHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
