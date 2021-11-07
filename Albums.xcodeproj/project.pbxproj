@@ -19,6 +19,9 @@
 		1D0AACE927386FCA0065C4B8 /* NetworkImageSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACE827386FCA0065C4B8 /* NetworkImageSerialization.swift */; };
 		1D0AACEA27386FCA0065C4B8 /* NetworkImageSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACE827386FCA0065C4B8 /* NetworkImageSerialization.swift */; };
 		1D0AACEC27386FDA0065C4B8 /* NetworkImageSerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACEB27386FDA0065C4B8 /* NetworkImageSerializationTests.swift */; };
+		1D0AACEE273870480065C4B8 /* NetworkImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACED273870480065C4B8 /* NetworkImageHandler.swift */; };
+		1D0AACEF273870480065C4B8 /* NetworkImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACED273870480065C4B8 /* NetworkImageHandler.swift */; };
+		1D0AACF1273870570065C4B8 /* NetworkImageHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AACF0273870570065C4B8 /* NetworkImageHandlerTests.swift */; };
 		AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E3A27068BE40032C442 /* AlbumsApp.swift */; };
 		AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE657E4B27068BE70032C442 /* AlbumsTests.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,8 @@
 		1D0AACE627386F380065C4B8 /* NetworkImageSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkImageSourceTests.m; sourceTree = "<group>"; };
 		1D0AACE827386FCA0065C4B8 /* NetworkImageSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageSerialization.swift; sourceTree = "<group>"; };
 		1D0AACEB27386FDA0065C4B8 /* NetworkImageSerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageSerializationTests.swift; sourceTree = "<group>"; };
+		1D0AACED273870480065C4B8 /* NetworkImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageHandler.swift; sourceTree = "<group>"; };
+		1D0AACF0273870570065C4B8 /* NetworkImageHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkImageHandlerTests.swift; sourceTree = "<group>"; };
 		AE657E3727068BE40032C442 /* Albums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE657E3A27068BE40032C442 /* AlbumsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsApp.swift; sourceTree = "<group>"; };
 		AE657E4727068BE70032C442 /* AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,7 @@
 				1D0AACE027386F2B0065C4B8 /* Albums-Bridging-Header.h */,
 				AE657E3A27068BE40032C442 /* AlbumsApp.swift */,
 				1D0AACD527386E3D0065C4B8 /* NetworkDataHandler.swift */,
+				1D0AACED273870480065C4B8 /* NetworkImageHandler.swift */,
 				1D0AACE827386FCA0065C4B8 /* NetworkImageSerialization.swift */,
 				1D0AACE227386F2B0065C4B8 /* NetworkImageSource.h */,
 				1D0AACE327386F2B0065C4B8 /* NetworkImageSource.m */,
@@ -109,6 +115,7 @@
 			children = (
 				AE657E4B27068BE70032C442 /* AlbumsTests.swift */,
 				1D0AACD827386E470065C4B8 /* NetworkDataHandlerTests.swift */,
+				1D0AACF0273870570065C4B8 /* NetworkImageHandlerTests.swift */,
 				1D0AACEB27386FDA0065C4B8 /* NetworkImageSerializationTests.swift */,
 				1D0AACE627386F380065C4B8 /* NetworkImageSourceTests.m */,
 				1D0AACDE27386ED70065C4B8 /* NetworkJSONHandlerTests.swift */,
@@ -217,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE657E3B27068BE40032C442 /* AlbumsApp.swift in Sources */,
+				1D0AACEE273870480065C4B8 /* NetworkImageHandler.swift in Sources */,
 				1D0AACE427386F2B0065C4B8 /* NetworkImageSource.m in Sources */,
 				1D0AACD627386E3D0065C4B8 /* NetworkDataHandler.swift in Sources */,
 				1D0AACE927386FCA0065C4B8 /* NetworkImageSerialization.swift in Sources */,
@@ -230,7 +238,9 @@
 			files = (
 				1D0AACDA27386E470065C4B8 /* NetworkDataHandlerTests.swift in Sources */,
 				1D0AACDD27386EC90065C4B8 /* NetworkJSONHandler.swift in Sources */,
+				1D0AACF1273870570065C4B8 /* NetworkImageHandlerTests.swift in Sources */,
 				AE657E4C27068BE70032C442 /* AlbumsTests.swift in Sources */,
+				1D0AACEF273870480065C4B8 /* NetworkImageHandler.swift in Sources */,
 				1D0AACE527386F2B0065C4B8 /* NetworkImageSource.m in Sources */,
 				1D0AACEC27386FDA0065C4B8 /* NetworkImageSerializationTests.swift in Sources */,
 				1D0AACDF27386ED70065C4B8 /* NetworkJSONHandlerTests.swift in Sources */,
